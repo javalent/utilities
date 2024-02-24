@@ -10,9 +10,7 @@ on:
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
-
     strategy:
       matrix:
         node-version: [20.x]
@@ -35,6 +33,7 @@ jobs:
         name: build
         path: build
   publish:
+      needs: build
       runs-on: ubuntu-latest
       steps:
           # The logic below handles the npm publication:
@@ -51,7 +50,6 @@ jobs:
             with:
               name: build
               path: build
-  
           - run: npm publish
             env:
                 NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

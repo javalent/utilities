@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.0](https://github.com/javalent/obsidian-utilities/compare/v1.0.1...v1.1.0) (2024-02-26)
+
+
+### Features
+
+* Added File and Folder fuzzy suggesters ([1f99d35](https://github.com/javalent/obsidian-utilities/commit/1f99d357eba792fa9b4bfd711fdb8a3e11123a2c))
+
 ## [1.0.1](https://github.com/javalent/obsidian-utilities/compare/v1.0.0...v1.0.1) (2024-02-24)
 
 

@@ -3,10 +3,7 @@ import {
     prepareSimpleSearch,
     type App,
     type FuzzyMatch,
-    type TFolder,
-    type TextComponent,
-    SearchResult,
-    SearchMatches
+    type TextComponent
 } from "obsidian";
 
 declare module "obsidian" {
@@ -51,23 +48,5 @@ export abstract class FuzzyInputSuggest<T> extends AbstractInputSuggest<
         this.renderTitle(titleEl, result);
         let noteEl = content.createDiv("suggestion-note");
         this.renderNote(noteEl, result);
-    }
-    highlightSuggestion(
-        containerEl: HTMLElement,
-        suggestion: string,
-        matches: SearchMatches
-    ) {
-        for (let i = 0; i < suggestion.length; i++) {
-            const maybeMatch = matches.find((m) => m[0] === i);
-            if (maybeMatch) {
-                containerEl.createSpan({
-                    cls: "suggestion-highlight",
-                    text: suggestion.substring(maybeMatch[0], maybeMatch[1])
-                });
-                i += maybeMatch[1] - maybeMatch[0] - 1;
-            } else {
-                containerEl.appendText(suggestion[i]);
-            }
-        }
     }
 }

@@ -27,29 +27,9 @@ jobs:
     # - run: npm test
     - name: Build
       run: npm run build --if-present
-    - name: Artifact
-      uses: actions/upload-artifact@master
-      with:
-        name: build
-        path: build
-  publish:
-      needs: build
-      runs-on: ubuntu-latest
-      steps:
-          # The logic below handles the npm publication:
-          - uses: actions/checkout@v3
-          - uses: actions/setup-node@v3
-            with:
-                node-version: 18
-                registry-url: "https://registry.npmjs.org"
-          - run: npm whoami
-            env:
-                NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
-          - name: Download Artifact
-            uses: actions/download-artifact@master
-            with:
-              name: build
-              path: build
-          - run: npm publish
-            env:
-                NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    - run: npm whoami
+      env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}
+    - run: npm publish
+      env:
+          NODE_AUTH_TOKEN: ${{secrets.NPM_TOKEN}}

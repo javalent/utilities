@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.1](https://github.com/javalent/obsidian-utilities/compare/v1.1.0...v1.1.1) (2024-02-27)
+
+
+### Bug Fixes
+
+* bump ([526bf0c](https://github.com/javalent/obsidian-utilities/commit/526bf0c00d43b7327e0fa3466a159c5d3223d39b))
+
 ## [1.1.0](https://github.com/javalent/obsidian-utilities/compare/v1.0.1...v1.1.0) (2024-02-26)
 
 

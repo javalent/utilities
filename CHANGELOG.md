@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.2](https://github.com/javalent/obsidian-utilities/compare/v1.1.1...v1.1.2) (2024-02-27)
+
+
+### Bug Fixes
+
+* add npmignore ([6badf62](https://github.com/javalent/obsidian-utilities/commit/6badf62d5a7617861ecfd0783e912d2a920690c5))
+
 ## [1.1.1](https://github.com/javalent/obsidian-utilities/compare/v1.1.0...v1.1.1) (2024-02-27)
 
 

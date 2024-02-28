@@ -3,7 +3,8 @@ import {
     prepareSimpleSearch,
     type App,
     type FuzzyMatch,
-    type TextComponent
+    type TextComponent,
+    SearchComponent
 } from "obsidian";
 
 declare module "obsidian" {
@@ -15,7 +16,7 @@ declare module "obsidian" {
 export abstract class FuzzyInputSuggest<T> extends AbstractInputSuggest<
     FuzzyMatch<T>
 > {
-    constructor(app: App, input: TextComponent, public items: T[]) {
+    constructor(app: App, input: TextComponent | SearchComponent, public items: T[]) {
         super(app, input.inputEl);
     }
     abstract getItemText(item: T): string;

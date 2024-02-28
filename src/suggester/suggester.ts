@@ -4,7 +4,9 @@ import {
     type App,
     type FuzzyMatch,
     type TextComponent,
-    SearchComponent
+    SearchComponent,
+    SearchMatches,
+    renderMatches
 } from "obsidian";
 
 declare module "obsidian" {
@@ -16,7 +18,11 @@ declare module "obsidian" {
 export abstract class FuzzyInputSuggest<T> extends AbstractInputSuggest<
     FuzzyMatch<T>
 > {
-    constructor(app: App, input: TextComponent | SearchComponent, public items: T[]) {
+    constructor(
+        app: App,
+        input: TextComponent | SearchComponent,
+        public items: T[]
+    ) {
         super(app, input.inputEl);
     }
     abstract getItemText(item: T): string;
@@ -49,5 +55,14 @@ export abstract class FuzzyInputSuggest<T> extends AbstractInputSuggest<
         this.renderTitle(titleEl, result);
         let noteEl = content.createDiv("suggestion-note");
         this.renderNote(noteEl, result);
+    }
+
+    renderMatches(
+        el: HTMLElement | DocumentFragment,
+        text: string,
+        matches: SearchMatches | null,
+        offset?: number
+    ): void {
+        renderMatches(el, text, matches, offset);
     }
 }

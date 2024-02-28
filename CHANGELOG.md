@@ -1,5 +1,13 @@
 # Changelog
 
+## [1.1.3](https://github.com/javalent/obsidian-utilities/compare/v1.1.2...v1.1.3) (2024-02-28)
+
+
+### Bug Fixes
+
+* Allow SearchComponent ([95f7ae4](https://github.com/javalent/obsidian-utilities/commit/95f7ae4bbfd0e4bf080fb22ac93d76e0a7213d48))
+* Expose renderMatches method on class ([8b59c8f](https://github.com/javalent/obsidian-utilities/commit/8b59c8fe65c81a612331c1e62554cac1bbe8c39a))
+
 ## [1.1.2](https://github.com/javalent/obsidian-utilities/compare/v1.1.1...v1.1.2) (2024-02-27)
 
 

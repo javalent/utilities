@@ -1,8 +1,16 @@
 {
     "name": "obsidian-utilities",
     "description": "Common utilities used throughout the Javalent plugin ecosystem.",
+    "author": "Jeremy Valentine",
     "main": "./build/main.js",
     "types": "types/main.d.ts",
+    "funding": "https://www.buymeacoffee.com/valentine195",
+    "bugs": "https://github.com/javalent/obsidian-utilities/issues",
+    "homepage": "https://github.com/javalent/obsidian-utilities#readme",
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/javalent/obsidian-utilities.git"
+    },
     "scripts": {
         "build": "npm run build:module && npm run build:types",
         "build:module": "node ./esbuild.config.mjs production",
@@ -28,7 +36,6 @@
         "undici-types": "^5.26.5",
         "w3c-keyname": "^2.2.8"
     },
-    "author": "Jeremy Valentine",
     "devDependencies": {
         "@popperjs/core": "^2.11.8",
         "@tsconfig/svelte": "^5.0.2",

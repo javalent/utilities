@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/javalent/obsidian-utilities/compare/v1.1.3...v1.1.4) (2024-03-21)
+
+
+### Bug Fixes
+
+* Improve NPM module definition ([ae6dbef](https://github.com/javalent/obsidian-utilities/commit/ae6dbef051627dd05b7443e74d81ba419df3aec3))
+
 ## [1.1.3](https://github.com/javalent/obsidian-utilities/compare/v1.1.2...v1.1.3) (2024-02-28)
 
 

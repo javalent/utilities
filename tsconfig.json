@@ -12,7 +12,7 @@
         "noImplicitAny": true,
         "moduleResolution": "node",
         "importHelpers": true,
-        "types": ["svelte", "node"],
+        "types": ["css-modules", "svelte", "node"],
         "lib": ["dom", "esnext", "scripthost", "es2015"]
     },
     "include": ["src/main.ts"]

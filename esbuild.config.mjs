@@ -4,6 +4,7 @@ import sveltePreprocess from "svelte-preprocess";
 import process from "process";
 import builtins from "builtin-modules";
 import { config } from "dotenv";
+import { build } from "tsup";
 
 config();
 
@@ -15,11 +16,13 @@ if you want to view the source, please visit the github repository of this modul
 
 const prod = process.argv[2] === "production";
 
+
+
 const parameters = {
     banner: {
         js: banner
     },
-    entryPoints: ["src/main.ts", "src/styles.css"],
+    entryPoints: ["src/main.ts"],
     bundle: true,
     external: [
         "obsidian",
@@ -53,7 +56,11 @@ const parameters = {
     target: "es2020",
     logLevel: "info",
     sourcemap: prod ? false : "inline",
-    minify: prod,
+    minifyWhitespace: true,
+    /** Documentation: https://esbuild.github.io/api/#minify */
+    minifyIdentifiers: false,
+    /** Documentation: https://esbuild.github.io/api/#minify */
+    minifySyntax: true,
     treeShaking: true,
     outdir: "./build",
     plugins: [
@@ -81,5 +88,12 @@ if (prod) {
     });
 } else {
     let ctx = await esbuild.context(parameters);
+
+    await build({
+        entry: ["./src/main.ts"],
+        dts: {
+            only: true
+        }
+    });
     await ctx.watch();
 }

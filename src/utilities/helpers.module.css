@@ -1,0 +1,19 @@
+.has-node-icon {
+    display: flex;
+    align-items: center;
+}
+.has-node-icon.x-small {
+    --icon-size: var(--icon-xs);
+}
+.has-node-icon.small {
+    --icon-size: var(--icon-s);
+}
+.has-node-icon.medium {
+    --icon-size: var(--icon-m);
+}
+.has-node-icon.large {
+    --icon-size: var(--icon-l);
+}
+.has-node-icon.x-large {
+    --icon-size: var(--icon-xl);
+}

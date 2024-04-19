@@ -4,7 +4,6 @@ import sveltePreprocess from "svelte-preprocess";
 import process from "process";
 import builtins from "builtin-modules";
 import { config } from "dotenv";
-import { build } from "tsup";
 
 config();
 
@@ -15,8 +14,6 @@ if you want to view the source, please visit the github repository of this modul
 `;
 
 const prod = process.argv[2] === "production";
-
-
 
 const parameters = {
     banner: {
@@ -56,13 +53,13 @@ const parameters = {
     target: "es2020",
     logLevel: "info",
     sourcemap: prod ? false : "inline",
-    minifyWhitespace: true,
+    minifyWhitespace: prod,
     /** Documentation: https://esbuild.github.io/api/#minify */
     minifyIdentifiers: false,
     /** Documentation: https://esbuild.github.io/api/#minify */
-    minifySyntax: true,
+    minifySyntax: prod,
     treeShaking: true,
-    outdir: "./build",
+    outdir: "./dist",
     plugins: [
         sveltePlugin({
             compilerOptions: { css: "injected" },
@@ -88,12 +85,5 @@ if (prod) {
     });
 } else {
     let ctx = await esbuild.context(parameters);
-
-    await build({
-        entry: ["./src/main.ts"],
-        dts: {
-            only: true
-        }
-    });
     await ctx.watch();
 }

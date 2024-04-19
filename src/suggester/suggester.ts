@@ -1,11 +1,11 @@
 import {
-    AbstractInputSuggest,
-    prepareSimpleSearch,
     type App,
     type FuzzyMatch,
     type TextComponent,
+    type SearchMatches,
+    AbstractInputSuggest,
+    prepareSimpleSearch,
     SearchComponent,
-    SearchMatches,
     renderMatches
 } from "obsidian";
 

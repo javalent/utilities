@@ -1,4 +1,4 @@
-import { FuzzyMatch, TFile, renderMatches } from "obsidian";
+import { type FuzzyMatch, TFile, renderMatches } from "obsidian";
 import { FuzzyInputSuggest } from "./suggester";
 
 export class FileInputSuggest extends FuzzyInputSuggest<TFile> {

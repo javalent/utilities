@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.5](https://github.com/javalent/obsidian-utilities/compare/v1.1.4...v1.1.5) (2024-04-19)
+
+
+### Bug Fixes
+
+* Adds setNodeIcon helper utility ([ad30fb4](https://github.com/javalent/obsidian-utilities/commit/ad30fb4e65ec79fbe3218a2ad875ed2a4083090c))
+
 ## [1.1.4](https://github.com/javalent/obsidian-utilities/compare/v1.1.3...v1.1.4) (2024-03-21)
 
 

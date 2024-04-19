@@ -1,5 +1,5 @@
 {
-    "name": "obsidian-utilities",
+    "name": "@javalent/utilities",
     "description": "Common utilities used throughout the Javalent plugin ecosystem.",
     "author": "Jeremy Valentine",
     "main": "build/main.js",

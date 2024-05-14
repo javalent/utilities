@@ -15,6 +15,11 @@ declare module "obsidian" {
     }
 }
 
+export interface FuzzyInputSuggest<T> {
+    renderNote?: (noteEL: HTMLElement, result: FuzzyMatch<T>) => void;
+    renderFlair?: (flairEl: HTMLElement, result: FuzzyMatch<T>) => void;
+}
+
 export abstract class FuzzyInputSuggest<T> extends AbstractInputSuggest<
     FuzzyMatch<T>
 > {
@@ -38,7 +43,6 @@ export abstract class FuzzyInputSuggest<T> extends AbstractInputSuggest<
         return results;
     }
 
-    abstract renderNote(noteEL: HTMLElement, result: FuzzyMatch<T>): void;
     abstract renderTitle(titleEl: HTMLElement, result: FuzzyMatch<T>): void;
     renderSuggestion(result: FuzzyMatch<T>, el: HTMLElement): void {
         el.addClass("mod-complex");
@@ -51,10 +55,9 @@ export abstract class FuzzyInputSuggest<T> extends AbstractInputSuggest<
             return;
         }
 
-        let titleEl = content.createDiv("suggestion-title");
-        this.renderTitle(titleEl, result);
-        let noteEl = content.createDiv("suggestion-note");
-        this.renderNote(noteEl, result);
+        this.renderTitle(content.createDiv("suggestion-title"), result);
+        this.renderNote?.(content.createDiv("suggestion-note"), result);
+        this.renderFlair?.(content.createDiv("suggestion-aux"), result);
     }
 
     renderMatches(

@@ -1,9 +1,8 @@
 import esbuild from "esbuild";
-import sveltePlugin from "esbuild-svelte";
-import sveltePreprocess from "svelte-preprocess";
 import process from "process";
 import builtins from "builtin-modules";
 import { config } from "dotenv";
+import { globbySync } from "globby";
 
 config();
 
@@ -14,12 +13,13 @@ if you want to view the source, please visit the github repository of this modul
 `;
 
 const prod = process.argv[2] === "production";
+const css = globbySync("src/**/*.css");
 
 const parameters = {
     banner: {
         js: banner
     },
-    entryPoints: ["src/main.ts"],
+    entryPoints: ["src/main.ts", ...css],
     bundle: true,
     external: [
         "obsidian",
@@ -60,18 +60,7 @@ const parameters = {
     minifySyntax: prod,
     treeShaking: true,
     outdir: "./dist",
-    plugins: [
-        sveltePlugin({
-            compilerOptions: { css: "injected" },
-            preprocess: sveltePreprocess(),
-            filterWarnings: (warning) => {
-                if (warning.code.toLowerCase().startsWith("a11y-")) {
-                    return false;
-                }
-                return true;
-            }
-        })
-    ]
+    plugins: []
 };
 
 if (prod) {

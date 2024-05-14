@@ -1,5 +1,1 @@
-node_modules
-test
-src
-esbuild.config.mjs
-tsconfig
+!./dist/**/*

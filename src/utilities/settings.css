@@ -1,0 +1,44 @@
+.javalent-nested-settings > summary {
+    outline: none;
+    display: flex;
+    justify-content: space-between;
+    list-style: none !important;
+    list-style-type: none !important;
+    min-height: 1rem;
+    border-top-left-radius: 0.1rem;
+    border-top-right-radius: 0.1rem;
+    cursor: pointer;
+    position: relative;
+}
+
+.javalent-nested-settings > summary::-webkit-details-marker,
+.javalent-nested-settings > summary::marker {
+    display: none !important;
+}
+
+.javalent-nested-settings .handle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform: rotate(0deg);
+    transition: transform 0.25s;
+}
+
+.javalent-nested-settings[open] .handle {
+    transform: rotate(90deg);
+}
+
+.javalent-nested-settings .setting-item {
+    border: 0px;
+    padding-bottom: 0;
+}
+.javalent-nested-settings {
+    padding-bottom: 18px;
+}
+.javalent-nested-settings:not([open]) .setting-item-heading {
+    border-bottom: 1px solid transparent;
+}
+.javalent-nested-settings[open] .setting-item-heading,
+.javalent-nested-settings:not(details) .setting-item-heading {
+    border-top: 0px;
+}

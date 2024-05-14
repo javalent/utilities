@@ -16,8 +16,8 @@ declare module "obsidian" {
 }
 
 export interface FuzzyInputSuggest<T> {
-    renderNote?: (noteEL: HTMLElement, result: FuzzyMatch<T>) => void;
-    renderFlair?: (flairEl: HTMLElement, result: FuzzyMatch<T>) => void;
+    renderNote?(noteEL: HTMLElement, result: FuzzyMatch<T>): void;
+    renderFlair?(flairEl: HTMLElement, result: FuzzyMatch<T>): void;
 }
 
 export abstract class FuzzyInputSuggest<T> extends AbstractInputSuggest<

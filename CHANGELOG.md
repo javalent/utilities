@@ -1,5 +1,15 @@
 # Changelog
 
+## [1.1.6](https://github.com/javalent/utilities/compare/v1.1.5...v1.1.6) (2024-05-15)
+
+
+### Bug Fixes
+
+* Adds `createCollapsibleSection` method ([a07c5c5](https://github.com/javalent/utilities/commit/a07c5c5bfcae369f490ad7b87bdc6cf62811fe7d))
+* Adds renderFlair method to fuzzy input suggest ([8a62eae](https://github.com/javalent/utilities/commit/8a62eaedc22852262d6625c1f64835c47505ec28))
+* Fixes declaration of FuzzyInputSuggest ([366f9e1](https://github.com/javalent/utilities/commit/366f9e1a6a400b6df927e747d8131949cf1a185c))
+* Syncs renderFlair method to Obsidian's ([c2b3209](https://github.com/javalent/utilities/commit/c2b32099f42fe07b8fcc585d21d9c4b8965e8627))
+
 ## [1.1.5](https://github.com/javalent/obsidian-utilities/compare/v1.1.4...v1.1.5) (2024-04-19)
 
 

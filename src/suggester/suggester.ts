@@ -57,7 +57,10 @@ export abstract class FuzzyInputSuggest<T> extends AbstractInputSuggest<
 
         this.renderTitle(content.createDiv("suggestion-title"), result);
         this.renderNote?.(content.createDiv("suggestion-note"), result);
-        this.renderFlair?.(content.createDiv("suggestion-aux"), result);
+        this.renderFlair?.(
+            el.createDiv("suggestion-aux").createDiv("suggestion-flair"),
+            result
+        );
     }
 
     renderMatches(

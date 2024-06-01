@@ -17,7 +17,7 @@
         "build:module": "node ./esbuild.config.mjs production",
         "build:types": "tsc --emitDeclarationOnly --declaration --declarationMap --project tsconfig.json --outDir dist"
     },
-    "version": "1.1.5",
+    "version": "1.1.6",
     "dependencies": {
         "svelte": "^4.2.15"
     },
